@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#083756" />
+    <meta name="author" content="Sebastian Garcia" />
+    <meta name="copyright" content="© 2021 verdragondw">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Aplicación con vue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <h2 class="text-center font-black text-5xl">Editor de platillos para restaurant</h2>
+    <p class="text-center text-gray-500 m-5">Aplicación que simula la modificación de un platillo de un sitio de un restaurant. 
+        <br>
+        Modifica los campos del formulario y observa como cambias los datos del platillo.
+    </p>
+    <section id="app-6" class="min-h-screen grid grid-cols-1 md:grid-cols-2 px-4 md:px-0">
+        <article class="flex justify-center flex-wrap items-center px-2 py-2 lg:px-10 w-full h-full">
+            <h3 class=" w-full text-center text-3xl font-black text-gray-900">Edita el platillo</h3>
+            <div class="w-full bg-white rounded px-4 py-5">
+                <div class="mb-8">
+                    <label for="tituloPlat" class="w-full uppercase font-bold mb-4 inline-block">Nombre del platillo</label>
+                    <input id="tituloPlat" class="w-full p-2 border-2 border-green-100 rounded-md" v-model="tituloPlatillo">
+                </div>
+                <div class="mb-8">
+                    <label for="descripcionPlat" class="w-full uppercase font-bold mb-4 inline-block">Descripción del platillo</label>
+                    <textarea id="descripcionPlat" class="w-full p-2 border-2 border-green-100 rounded-md" v-model="descripcion"></textarea>
+                </div>
+            </div>
+        </article>
+        <article class="p-2 flex flex-wrap justify-center items-center">
+            <h3 class=" w-full text-center text-3xl font-black text-gray-900">Nuestros platillos para hoy</h3>
+            <div class="w-full lg:w-80 h-auto bg-white rounded-md overflow-hidden">
+                <div class="w-full h-60 overflow-hidden"><img class="w-full" src="https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt=""></div>
+                <div class="px-5 pb-10">
+                    <h3 class="text-center text-2xl font-black text-gray-800 mb-5"> {{tituloPlatillo}} </h3>
+                    <p class="text-gray-600"> {{descripcion}}</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var app6 = new Vue({
+            el: '#app-6',
+            data: {
+                tituloPlatillo: 'Pizza de peperoni',
+                descripcion: 'Rica pizza de peperoni preparada en horno de leña.'
+            }
+        })
+    </script>
+</body>
+</html>
